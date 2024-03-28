@@ -1,2 +1,2 @@
-# project-song-recommender
+# Song recommender
 Song Recommender
