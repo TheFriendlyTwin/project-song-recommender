@@ -6,15 +6,6 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from spotipy.oauth2 import SpotifyClientCredentials
 from sklearn.metrics import pairwise_distances_argmin_min
-import os
-
-# Getting the client_id and client_secret variables created earlier using cmd
-c_id = os.getenv('SPOTIFY_CLIENT_ID')
-c_secret = os.getenv('SPOTIFY_CLIENT_SECRET')
-
-#Initialize SpotiPy with user credentias
-sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=c_id,
-                                                           client_secret=c_secret))
 
 
 scaled_df = pd.read_csv(r"C:\Users\mafal\Documents\ironhack\projects\project-song-recommender\song-recommender-streamlit\data\scaled_tracks.csv")
@@ -25,15 +16,9 @@ with open(r"C:\Users\mafal\Documents\ironhack\projects\project-song-recommender\
 with open(r"C:\Users\mafal\Documents\ironhack\projects\project-song-recommender\song-recommender-streamlit\data\kmeans.pkl", "rb") as f:
     kmeans = pickle.load(f)
 
-def connect_spotipy(client_id, client_secret):
-    #Initialize SpotiPy with user credentias
-    sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=client_id,
-                                                           client_secret=client_secret))
-    return sp
-
 
 # Function that recommends a song with similar music features 
-def recommend_song(song, artist):
+def recommend_song(sp, song, artist):
     cols = ['danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo']
     
     try: 

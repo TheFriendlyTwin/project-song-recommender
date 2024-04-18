@@ -3,6 +3,9 @@ import streamlit as st
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # take environment variables from .env
 
 # Getting the client_id and client_secret variables created earlier using cmd
 c_id = os.getenv('SPOTIFY_CLIENT_ID')
