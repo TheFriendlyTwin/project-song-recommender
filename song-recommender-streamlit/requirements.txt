@@ -1,7 +1,7 @@
 streamlit
 spotipy
 pandas
-sklearn
+#sklearn
 scikit-learn
 numpy
 matplotlib
