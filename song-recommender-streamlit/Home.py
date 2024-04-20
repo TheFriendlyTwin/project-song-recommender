@@ -27,7 +27,7 @@ artist = col2.text_input('Artist')
 st.header("Press enter to get your recommended song")
 
 if artist and song:
-    song_recommended = recommend_song(song, artist)
+    song_recommended = recommend_song(sp, song, artist)
 else:
     st.stop()
 st.header(song_recommended, divider='rainbow')
