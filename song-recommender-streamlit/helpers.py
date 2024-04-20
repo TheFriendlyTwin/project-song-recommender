@@ -7,13 +7,13 @@ from sklearn.preprocessing import StandardScaler
 from spotipy.oauth2 import SpotifyClientCredentials
 from sklearn.metrics import pairwise_distances_argmin_min
 
+# Get scaled df
+scaled_df = pd.read_csv("data/scaled_tracks.csv")
 
-scaled_df = pd.read_csv(r"C:\Users\mafal\Documents\ironhack\projects\project-song-recommender\song-recommender-streamlit\data\scaled_tracks.csv")
-
-with open(r"C:\Users\mafal\Documents\ironhack\projects\project-song-recommender\song-recommender-streamlit\data\scaler.pkl", "rb") as f:
+with open("data/scaler.pkl", "rb") as f:
     scaler = pickle.load(f)
 
-with open(r"C:\Users\mafal\Documents\ironhack\projects\project-song-recommender\song-recommender-streamlit\data\kmeans.pkl", "rb") as f:
+with open("data/kmeans.pkl", "rb") as f:
     kmeans = pickle.load(f)
 
 
@@ -66,3 +66,6 @@ def recommend_song(sp, song, artist):
 
     except IndexError as e:
         return f"An error occurred: {e}"
+    
+
+
