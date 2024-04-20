@@ -19,3 +19,7 @@ The Web scrapping task can be visualized in the following repositories:
 - ### Project Song Recommender - Kaggle Spotify dataset file 
 This Notebook on the other hand includes the following Kaggle dataset:
 - kaggle_spotify_dataset
+
+- ## Project Song Recommender - Streamlit
+  This folder includes all the files and python notebooks developed to create the Song Recommender streamlit app:
+  - https://project-song-recommender-spotipy.streamlit.app/
