@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Get the tracks df
-tracks_df = pd.read_csv("data/tracks.csv")
+tracks_df = pd.read_csv("song-recommender-streamlit/data/tracks.csv")
 
 # Calculate the number of songs per genre
 genre_counts = tracks_df['artist_genre'].value_counts().reset_index()
